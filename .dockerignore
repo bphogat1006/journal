@@ -1,0 +1,17 @@
+Dockerfile
+.dockerignore
+.git
+.gitignore
+.vscode
+node_modules
+.npmrc
+build
+.svelte-kit
+package
+.env
+.env.*
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+.eslintrc.cjs
+.eslintignore
+README.md
