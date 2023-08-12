@@ -4,7 +4,6 @@
 
     export let entry
 
-    entry.content = entry.content.replaceAll('\n', '<br>')
     let tags = entry.tags ? entry.tags.split(',') : []
 
     function clicked() {
@@ -43,5 +42,8 @@
     #date {
         white-space: nowrap;
         margin-bottom: 0.5rem;
+    }
+    #content {
+        white-space: pre-wrap;
     }
 </style>
