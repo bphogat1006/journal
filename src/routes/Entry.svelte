@@ -13,7 +13,7 @@
 
 <div id="container" on:mouseup={clicked}>
     <p id="date"><strong>{entry.date}</strong></p>
-    <p id="content">{@html entry.content}</p>
+    <p id="content">{entry.content}</p>
     <div>
         {#each tags as tag}
             <Tag tag={tag} clickable={false}/>
