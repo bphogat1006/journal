@@ -29,6 +29,8 @@
     })
 
     function validEntryContent(content) {
+        // also if content is empty, add confirmation for page reload
+        window.onbeforeunload = (content == '') ? null : event => ""
         // check if characters are all ASCII
         return /^[\x00-\x7F]*$/.test(content) && content != ''
     }
