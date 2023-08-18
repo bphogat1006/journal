@@ -1,7 +1,8 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 COPY package*.json .
-RUN npm ci --omit dev
+ENV NODE_ENV=production
+RUN npm ci --omit=dev
 COPY . .
 ARG URL_PREFIX
 ENV URL_PREFIX=${URL_PREFIX}
@@ -23,6 +24,5 @@ COPY --from=builder --chown=node:node /app/node_modules node_modules/
 COPY --chown=node:node package.json .
 ARG PORT
 ENV PORT=${PORT}
-ENV NODE_ENV=production
 EXPOSE ${PORT}
 CMD [ "node", "build" ]
