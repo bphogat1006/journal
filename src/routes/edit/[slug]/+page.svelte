@@ -5,6 +5,7 @@
     export let data
 
     function submit() {
+        window.onbeforeunload = null
         window.location = base
     }
 </script>
