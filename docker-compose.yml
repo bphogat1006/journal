@@ -12,9 +12,6 @@ services:
     # depends_on:
     #   mariadb:
     #     condition: service_healthy
-    # TEMPORARY DELETE IT LATER
-    ports:
-      - 333:80
 
 networks:
   bobya-bridge-network:
