@@ -4,7 +4,7 @@ import { localeDateString } from "$lib/date.js";
 export async function load({ fetch }) {
     let endDate = localeDateString(new Date())
     let startDate = new Date()
-    const dateRangeYears = 5
+    const dateRangeYears = 1
     startDate.setFullYear(startDate.getFullYear() - dateRangeYears);
     startDate = localeDateString(startDate)
     const params = new URLSearchParams()
