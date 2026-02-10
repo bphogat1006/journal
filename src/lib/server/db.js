@@ -1,12 +1,12 @@
 import { createPool } from 'mariadb'
-import { MARIADB_HOST, MARIADB_USER, MARIADB_PASSWORD, DATABASE } from '$env/static/private'
+import { env } from '$env/dynamic/private';
 
 const db_config = {
-    host: MARIADB_HOST,
-    user: MARIADB_USER,
-    password: MARIADB_PASSWORD,
-    database: DATABASE,
-    connectionLimit: 15
+    host: env.MARIADB_HOST,
+    user: env.MARIADB_USER,
+    password: env.MARIADB_PASSWORD,
+    database: env.DATABASE,
+    connectionLimit: 2
 }
 const pool = createPool(db_config)
 
@@ -26,8 +26,4 @@ export async function query(query, data=[], log = false) {
         if (log) console.log(conn.threadId+": RELEASING")
         if (conn) conn.release()
     }
-}
-
-export function sanitizeInput() {
-    
 }

@@ -1,0 +1,21 @@
+services:
+  journal:
+    build: 
+      context: .
+      args:
+        - URL_PREFIX=/admin/journal
+    container_name: journal
+    env_file: .env.prod
+    init: true
+    networks:
+      - bobya-bridge-network
+    # depends_on:
+    #   mariadb:
+    #     condition: service_healthy
+    # TEMPORARY DELETE IT LATER
+    ports:
+      - 333:80
+
+networks:
+  bobya-bridge-network:
+    external: true
